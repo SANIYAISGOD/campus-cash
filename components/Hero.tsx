@@ -14,22 +14,22 @@ export default function Hero() {
         <AnimatedLoginModal />
       </header>
 
-      <div className="container mx-auto py-9 relative px-10">
+      <div className="container mx-auto py-5 relative px-20">
         {/* Grid Layout for Hero Section */}
         <div className="grid md:grid-cols-2 items-center gap-8">
           {/* Left Content */}
           <div className="max-w-4xl ml-auto">
             {/* Safe Money Badge */}
             <div className="inline-flex items-center rounded-full px-4 py-2 text-sm pb-8">
-              <span className="text-white">KEEP YOUR MONEY SAFE</span>
+              <span className="text-white">SMART SPENDING, STRESS-FREE LIVING!</span>
               <span className="ml-2">⚡</span>
             </div>
 
             {/* Main Heading */}
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white leading-tight mb-8 text-left">
-              Best <span className="text-[#C1FF00]">crypto</span> <br />
-              investing <span className="text-[#C1FF00]">platform</span> <br />
-              <span className="text-gray-400">for your future.</span>
+              Master <span className="text-[#C1FF00]">your</span> <br />
+              money <span className="text-[#C1FF00]">one expense</span> <br />
+              <span className="text-gray-400">at a time.</span>
             </h1>
 
             {/* Description */}
@@ -49,44 +49,27 @@ export default function Hero() {
                   />
                 </svg>
               </div>
-              <p className="text-sm">
-                Polkadot unites and secures a growing ecosystem of specialized
-                blockchains called parachains. Apps and services on Polkadot can
-                ecosystem of specialized called.
+              <p className="text-md">
+              Tired of losing track of where your pocket money goes? Campus Cash makes budgeting easy with real-time tracking, smart spending alerts, and hassle-free bill splitting.
               </p>
             </div>
 
-            {/* Bottom Section */}
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h2 className="text-4xl sm:text-5xl font-bold text-white">
-                  Your <span className="text-[#C1FF00]">trusted</span> partner of <br />
-                  <span className="text-gray-300">cryptocurrency.</span>
-                </h2>
-              </div>
-              <div className="text-gray-400">
-                <p>
-                  Polkadot unites and secures a growing ecosystem of specialized
-                  blockchains called parachains. Apps and services on Polkadot
-                  can ecosystem of specialized called.
-                </p>
-              </div>
-            </div>
+          
           </div>
 
           {/* Right Content (Image) */}
-          <div className="flex justify-end mt-8 md:mt-0">
-            <div className="relative w-full max-w-none md:max-w-xs lg:max-w-sm">
-              <Image
-                src="/mobile.png" // Path to your image in the public folder
-                alt="Hero Section Image"
-                layout="responsive" // Ensures the image scales with container width
-                width={300} // Adjust the width to fit the layout
-                height={450} // Adjust the height to fit within the hero section
-                className="object-cover w-full h-full" // Ensure image covers the container space
-              />
-            </div>
-          </div>
+<div className="flex justify-end items-end mt-4 md:mt-[-30px]"> {/* Shift image upward */}
+  <div className="relative w-2/3 max-w-xs md:max-w-sm lg:max-w-md"> {/* Reduce size */}
+    <Image
+      src="/mobile.png" // Path to your image in the public folder
+      alt="Hero Section Image"
+      width={180} // Reduced width
+      height={320} // Reduced height
+      className="object-contain w-full h-auto" // Ensures proper scaling
+    />
+  </div>
+</div>
+
 
         </div>
       </div>
