@@ -3,8 +3,8 @@ import AnimatedLoginModal from "./ui/Login";
 
 export default function Hero() {
   return (
-    <div className="bg-black max-h-screen w-full overflow-hidden">
-      <header className="top-0 left-0 w-full bg-zinc-900 shadow-md z-50 container mx-auto flex items-center justify-between px-4 sm:px-8 md:px-14 pt-4">
+    <div className="bg-[#0A0A0A] max-h-screen w-full overflow-hidden">
+      <header className="top-0 left-0 w-full bg-black shadow-md z-50 container mx-auto flex items-center justify-between px-4 sm:px-8 md:px-14 pt-4">
         {/* Logo */}
         <div className="flex items-center space-x-2">
           <div className="w-8 h-8 rounded-full" />
