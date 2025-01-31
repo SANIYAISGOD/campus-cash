@@ -3,6 +3,7 @@ import type { Config } from "tailwindcss";
 const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
+
 const config: Config = {
   darkMode: ["class"],
   content: [
@@ -16,6 +17,7 @@ const config: Config = {
         input: `0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08)`,
       },
       colors: {
+        "custom-green": "#c1ff72",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -57,10 +59,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [
-    addVariablesForColors,
-    require("tailwindcss-animate"),
-  ],
+  plugins: [addVariablesForColors, require("tailwindcss-animate")],
 } satisfies Config;
 
 function addVariablesForColors({ addBase, theme }: any) {
@@ -68,9 +67,11 @@ function addVariablesForColors({ addBase, theme }: any) {
   let newVars = Object.fromEntries(
     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
   );
- 
+
   addBase({
     ":root": newVars,
   });
 }
+
 export default config;
+

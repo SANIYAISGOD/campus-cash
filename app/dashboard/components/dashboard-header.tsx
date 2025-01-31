@@ -7,7 +7,7 @@ const periods = ["This month", "Last month", "This year", "Last 12 months"]
 export function DashboardHeader() {
   return (
     <div className="flex items-center justify-between">
-      <h1 className="text-2xl font-semibold">Hello!</h1>
+      <h1 className="text-2xl font-semibold">Hello, Sanya!</h1>
       <div className="flex items-center gap-2">
         {periods.map((period) => (
           <Button key={period} variant="ghost" className="text-zinc-400 bg-black hover:text-[#c1ff72] hover:bg-zinc-900">
