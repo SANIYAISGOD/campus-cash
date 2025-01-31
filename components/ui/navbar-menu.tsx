@@ -20,6 +20,7 @@ export const MenuItem = ({
   children,
 }: {
   setActive: (item: string) => void;
+  href?:string;
   active: string | null;
   item: string;
   children?: React.ReactNode;
@@ -113,7 +114,7 @@ export const HoveredLink = ({ children, ...rest }: any) => {
   return (
     <Link
       {...rest}
-      className="text-neutral-200 hover:text-black "
+      className="text-neutral-200 hover:text-[#c1ff72] "
     >
       {children}
     </Link>

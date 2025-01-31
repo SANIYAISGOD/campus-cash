@@ -1,12 +1,10 @@
 import Hero from "@/components/Hero";
-import { NavbarDemo } from "@/components/Navbar";
-
 
 const Home = () => {
   return (
-    <main className="relative bg-black flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
-      <div className="max-w-full">
-        <Hero/>
+    <main className="relative bg-black flex flex-col overflow-y-auto min-h-screen w-full">
+      <div className="flex-1 flex justify-center items-center px-5 sm:px-10">
+        <Hero />
       </div>
     </main>
   );

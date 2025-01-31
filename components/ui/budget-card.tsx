@@ -25,12 +25,12 @@ export function BudgetCard({ budget }: BudgetCardProps) {
               </p>
             </div>
           </div>
-          <span className="text-[#c1ff72] text-xl font-semibold">${budget.totalAmount}</span>
+          <span className="text-[#c1ff72] text-xl font-semibold">₹{budget.totalAmount}</span>
         </div>
         <div className="space-y-2">
           <div className="flex justify-between text-sm text-gray-400">
-            <span>${budget.spent} Spend</span>
-            <span>${remaining} Remaining</span>
+            <span>₹{budget.spent} Spend</span>
+            <span>₹{remaining} Remaining</span>
           </div>
           <Progress value={progress} className="bg-zinc-800 h-2" indicatorClassName="bg-[#c1ff72]" />
         </div>
