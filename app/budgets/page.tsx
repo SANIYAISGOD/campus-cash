@@ -1,43 +1,6 @@
 "use client"
-import type { Budget } from "@/types/budget"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { BudgetDashboard } from "@/components/ui/budget-dashboard"
 import { NavbarDemo } from "@/components/Navbar"
-
-const initialBudgets: Budget[] = [
-  {
-    id: "1",
-    category: "Travel",
-    icon: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-r6cie0rkdUbDUYNKlxAc885jbf5W9X.png",
-    totalAmount: 1000,
-    spent: 300,
-    itemCount: 0,
-  },
-  {
-    id: "2",
-    category: "Food",
-    icon: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-r6cie0rkdUbDUYNKlxAc885jbf5W9X.png",
-    totalAmount: 2000,
-    spent: 1200,
-    itemCount: 0,
-  },
-  {
-    id: "3",
-    category: "Gym",
-    icon: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-r6cie0rkdUbDUYNKlxAc885jbf5W9X.png",
-    totalAmount: 1200,
-    spent: 1000,
-    itemCount: 0,
-  },
-  {
-    id: "4",
-    category: "Stationary",
-    icon: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-r6cie0rkdUbDUYNKlxAc885jbf5W9X.png",
-    totalAmount: 600,
-    spent: 100,
-    itemCount: 0,
-  },
-]
 
 // export default function BudgetDashboard() { //This function is now in a separate component
 //   const [budgets, setBudgets] = useState<Budget[]>(initialBudgets)

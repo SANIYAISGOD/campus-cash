@@ -1,6 +1,7 @@
 import { Card, CardContent } from "./card"
 import { Progress } from "./progress"
 import type { Budget } from "@/types/budget"
+import Image from 'next/image';
 
 interface BudgetCardProps {
   budget: Budget
@@ -16,7 +17,7 @@ export function BudgetCard({ budget }: BudgetCardProps) {
         <div className="flex justify-between items-start mb-4">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-zinc-800 rounded-full flex items-center justify-center">
-              <img src={budget.icon || "/placeholder.svg"} alt="" className="w-6 h-6" />
+              <Image src={budget.icon || "/placeholder.svg"} alt="" className="w-6 h-6" />
             </div>
             <div>
               <h3 className="text-[#c1ff72] font-medium">{budget.category}</h3>

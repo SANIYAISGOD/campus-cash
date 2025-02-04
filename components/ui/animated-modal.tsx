@@ -65,9 +65,11 @@ export const ModalBody = ({
     }
   }, [open])
 
-  const modalRef = useRef<HTMLDivElement>(null)
-  const { setOpen } = useModal()
-  useOutsideClick(modalRef, () => setOpen(false))
+  const modalRef = useRef<HTMLDivElement>(null);  // RefObject<HTMLDivElement>
+
+  const { setOpen } = useModal();
+  useOutsideClick(modalRef as React.RefObject<HTMLDivElement>, () => setOpen(false));  // Type assertion
+
 
   return (
     <AnimatePresence>
