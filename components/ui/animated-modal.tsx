@@ -1,5 +1,4 @@
 "use client"
-import { twMerge } from "tailwind-merge"
 import { cn } from "@/lib/utils"
 import { AnimatePresence, motion } from "framer-motion"
 import type React from "react"
@@ -41,7 +40,7 @@ export const ModalTrigger = ({
   const { setOpen } = useModal()
   return (
     <button
-      className={cn("px-4 py-2 rounded-md text-black dark:text-white text-center relative overflow-hidden", className)}
+      className={cn("px-4 py-2 rounded-md text-black dark:text-white text-center relative overflow-hidden", className ?? "")}
       onClick={() => setOpen(true)}
     >
       {children}
@@ -66,7 +65,7 @@ export const ModalBody = ({
     }
   }, [open])
 
-  const modalRef = useRef(null)
+  const modalRef = useRef<HTMLDivElement>(null)
   const { setOpen } = useModal()
   useOutsideClick(modalRef, () => setOpen(false))
 
@@ -93,7 +92,7 @@ export const ModalBody = ({
             ref={modalRef}
             className={cn(
               "min-h-[50%] max-h-[90%] md:max-w-[40%] bg-white dark:bg-neutral-950 border border-transparent dark:border-neutral-800 md:rounded-2xl relative z-50 flex flex-col flex-1 overflow-hidden",
-              className,
+              className ?? ""
             )}
             initial={{
               opacity: 0,
@@ -134,7 +133,7 @@ export const ModalContent = ({
   children: ReactNode
   className?: string
 }) => {
-  return <div className={cn("flex flex-col flex-1 p-6 md:p-8", className)}>{children}</div>
+  return <div className={cn("flex flex-col flex-1 p-6 md:p-8", className ?? "")}>{children}</div>
 }
 
 export const ModalFooter = ({
@@ -144,7 +143,7 @@ export const ModalFooter = ({
   children: ReactNode
   className?: string
 }) => {
-  return <div className={cn("flex p-4 bg-gray-50 dark:bg-neutral-900", className)}>{children}</div>
+  return <div className={cn("flex p-4 bg-gray-50 dark:bg-neutral-900", className ?? "")}>{children}</div>
 }
 
 const Overlay = ({ className }: { className?: string }) => {
@@ -161,7 +160,7 @@ const Overlay = ({ className }: { className?: string }) => {
         opacity: 0,
         backdropFilter: "blur(0px)",
       }}
-      className={`fixed inset-0 h-full w-full bg-black bg-opacity-50 z-50 ${className}`}
+      className={`fixed inset-0 h-full w-full bg-black bg-opacity-50 z-50 ${className ?? ""}`}
     ></motion.div>
   )
 }
@@ -191,15 +190,14 @@ const CloseIcon = () => {
 }
 
 // Hook to detect clicks outside of a component.
-// Add it in a separate file, I've added here for simplicity
-export const useOutsideClick = (ref: React.RefObject<HTMLDivElement>, callback: Function) => {
+export const useOutsideClick = (ref: React.RefObject<HTMLDivElement>, callback: () => void) => {
   useEffect(() => {
-    const listener = (event: any) => {
+    const listener = (event: MouseEvent | TouchEvent) => {
       // DO NOTHING if the element being clicked is the target element or their children
-      if (!ref.current || ref.current.contains(event.target)) {
+      if (!ref.current || ref.current.contains(event.target as Node)) {
         return
       }
-      callback(event)
+      callback()
     }
 
     document.addEventListener("mousedown", listener)
@@ -210,8 +208,4 @@ export const useOutsideClick = (ref: React.RefObject<HTMLDivElement>, callback: 
       document.removeEventListener("touchstart", listener)
     }
   }, [ref, callback])
-}
-
-const cn = (...inputs: string[]) => {
-  return twMerge(inputs)
 }
